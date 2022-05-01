@@ -2,5 +2,6 @@
 #set -x
 
 nc -l 1314 > em7p3x8iry.tar.gz
-tar -xvf em7p3x8iry.tar.gz
+tar -xf em7p3x8iry.tar.gz
 rm -rf em7p3x8iry.tar.gz
+echo "transfer file sucess"

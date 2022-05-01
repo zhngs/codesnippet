@@ -16,6 +16,7 @@ if [[ $# -ne 2 ]] ; then
     exit 1
 fi
 
-tar -cvf 7yh9x01m1g.tar.gz $FILENAME
+tar -cf 7yh9x01m1g.tar.gz $FILENAME
 nc $IP 1314 < 7yh9x01m1g.tar.gz
 rm -rf 7yh9x01m1g.tar.gz
+echo "transfer file sucess"
