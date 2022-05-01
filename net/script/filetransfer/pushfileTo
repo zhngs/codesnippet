@@ -1,0 +1,21 @@
+#!/bin/bash
+#set -x
+
+IP=$1
+FILENAME=$2
+
+show_help()
+{
+    echo ""
+    echo "Usage: ./pushfileTo {ip} {filename}"
+    echo ""
+}
+
+if [[ $# -ne 2 ]] ; then
+    show_help
+    exit 1
+fi
+
+tar -cvf 7yh9x01m1g.tar.gz $FILENAME
+nc $IP 1314 < 7yh9x01m1g.tar.gz
+rm -rf 7yh9x01m1g.tar.gz
