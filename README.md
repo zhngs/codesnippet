@@ -7,5 +7,3 @@ code snippets for sharing and learning
 - add muduo multiplexer
 - add muduo socks4a
 - add network programming writed by chenshuo
-- add tokio example
-- add rust asyc example
