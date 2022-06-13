@@ -36,3 +36,18 @@ $ ./discard_client localhost 256
 4.551 MiB/s 4.080 Ki Msgs/s 1142.26 bytes per msg
 4.466 MiB/s 3.569 Ki Msgs/s 1281.33 bytes per msg
 ```
+
+## 测试
+- 本机单线程情况下，测试不同消息大小对带宽的影响
+```shell
+message size       bandwidth
+128                 13 Mib/s
+256                 26 Mib/s
+512                 53 Mib/s
+1024                97 Mib/s
+2048                209 Mib/s
+4096                413 Mib/s
+65536               3814 Mib/s
+```
+- 可以发现，带宽和消息大小成正比，并且经过验证，cpu的主要开销在内核态
+- 不难得出结论：单位时间内发出的消息数是一定的，原因是单位时间内系统调用的次数一定，且消息的大小对系统调用的影响不大
